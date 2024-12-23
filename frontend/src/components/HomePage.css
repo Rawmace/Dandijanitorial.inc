@@ -1,0 +1,140 @@
+/* Import Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap");
+
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Home container with background image */
+.home-container {
+  background-image: url("../assets/background1.jpg"); /* Replace with your background image */
+  background-size: cover;
+  background-position: center;
+
+  height: 100vh;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Header styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8); /* Slight transparent background */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* Logo and title section */
+.logo-title {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 10px;
+  /* border: 3px solid red; */
+  border-radius: 50%;
+}
+
+.company-title {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Navigation bar styling */
+.nav-bar {
+  display: flex;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffcc00; /* A highlight color when hovering over links */
+}
+
+/* Main content for the hero section */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.main-heading {
+  color: rgb(255, 255, 255);
+
+  -webkit-text-stroke: 1px rgb(255, 255, 255);
+
+  font-size: 48px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  margin-bottom: 20px;
+}
+
+.subtext {
+  color: rgb(255, 255, 255);
+  font-size: 22px;
+  font-weight: 400;
+
+  margin-bottom: 30px;
+  letter-spacing: 1.5px;
+}
+
+.quote-button {
+  display: inline-block;
+  background-color: #ffcc00;
+  color: black;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.quote-button:hover {
+  background-color: #e6b800;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .main-heading {
+    font-size: 32px;
+  }
+
+  .subtext {
+    font-size: 18px;
+  }
+
+  .nav-links li {
+    margin: 0 10px;
+  }
+}
