@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./HomePage.css";
 import logo from "../assets/logo.jpg"; // Add your logo image file path here
 
 const HomePage = () => {
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <div className="home-container">
       <header className="header">
@@ -13,25 +23,33 @@ const HomePage = () => {
             <p>CARPET CLEANING INC.</p>
           </h1>
         </div>
-        <nav className="nav-bar">
+        <nav className={`nav-bar ${isMenuOpen ? "open" : ""}`}>
           <ul className="nav-links">
-            <li>
-              <a href="#home">Home</a>
+            <li onClick={closeMenu}>
+              <a href="#">Home</a>
             </li>
-            <li>
+            <li onClick={closeMenu}>
               <a href="#services">Services</a>
             </li>
-            <li>
-              <a href="#quote">Instant Quote</a>
+            <li onClick={closeMenu}>
+              <a href="#contact">Instant Quote</a>
             </li>
-            <li>
-              <a href="#about">About</a>
+            <li onClick={closeMenu}>
+              <a href="#about-us">About</a>
             </li>
-            <li>
+            <li onClick={closeMenu}>
               <a href="#contact">Contact</a>
             </li>
           </ul>
         </nav>
+        <div
+          className={`hamburger ${isMenuOpen ? "open" : ""}`}
+          onClick={toggleMenu}
+        >
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </div>
       </header>
       <div className="hero-content">
         <h2 className="main-heading">
@@ -40,8 +58,8 @@ const HomePage = () => {
         <p className="subtext">
           Commercial&nbsp;|&nbsp;Industrial&nbsp;|&nbsp;Residential&nbsp;|&nbsp;Offices
         </p>
-        <a href="#quote" className="quote-button">
-          Get a Quote Now
+        <a href="tel:6477848830" className="quote-button">
+          Call us Now
         </a>
       </div>
     </div>

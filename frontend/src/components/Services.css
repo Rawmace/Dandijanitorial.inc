@@ -1,0 +1,115 @@
+/* Services Section Styles */
+.services-section {
+  /* background-image: url(../assets/service.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh; */
+  position: relative;
+  background: linear-gradient(135deg, #fbfbfb 30%, #71838b 100%);
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.services-heading {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* Service Item Styles */
+.service-item {
+  background-color: rgb(199, 213, 218);
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 290px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(82, 1, 1, 0.15);
+}
+
+.service-icon {
+  font-size: 48px;
+  color: #010565;
+  margin-bottom: 20px;
+}
+
+.service-item h3 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.service-item p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.startup-process {
+  margin-top: 60px;
+  padding: 40px;
+  background-color: #2e3332;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.startup-process h3 {
+  font-size: 28px;
+  padding: 10px;
+  background-color: #004d40;
+  border-radius: 10px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.startup-process p {
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.8;
+}
+
+/* Animations and Hover */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-item {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .services-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-item {
+    max-width: 100%;
+  }
+}

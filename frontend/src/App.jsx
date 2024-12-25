@@ -1,11 +1,10 @@
 import React from "react";
 import "./App.css";
-
-import Home from "./components/Home";
-import About from "./components/About";
+import HomePage from "./components/HomePage";
+import About from "./components/AboutUs";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
-import HomePage from "./components/HomePage";
+import AboutUs from "./components/AboutUs";
 
 function App() {
   return (
@@ -13,9 +12,9 @@ function App() {
       <HomePage />
 
       <main>
-        <Home />
-        <About />
         <Services />
+        <AboutUs />
+
         <Contact />
       </main>
 
