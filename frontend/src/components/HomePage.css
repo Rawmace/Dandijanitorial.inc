@@ -101,7 +101,7 @@
 
 .hamburger.open .bar:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 
 .hamburger.open .bar:nth-child(2) {
