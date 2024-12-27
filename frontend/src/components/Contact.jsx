@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Contact.css";
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -9,8 +10,7 @@ const Contact = () => {
 
   const [feedback, setFeedback] = useState(null);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const handleChange = ({ target: { name, value } }) => {
     setFormData({
       ...formData,
       [name]: value,
@@ -19,10 +19,11 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setFeedback(null); // Reset feedback state
 
     try {
       const response = await fetch(
-        "https://your-backend-service.onrender.com/send-email",
+        "https://dandijanitorial-inc.onrender.com/send-email",
         {
           method: "POST",
           headers: {
@@ -42,7 +43,7 @@ const Contact = () => {
       } else {
         setFeedback({
           type: "error",
-          message: "There was an error sending your message.",
+          message: "There was an error sending your message. Please try again.",
         });
       }
     } catch (error) {
@@ -64,8 +65,8 @@ const Contact = () => {
             <div className="contact-item">
               <span className="icon">📞</span>
               <p>
-                Phone: <a href="tel:+16477848830">+1 647 784 8830 </a>|| Office:{" "}
-                <a href="tel:+14167991019">+1 416 799 1019 </a>
+                Phone: <a href="tel:+16477848830">+1 647 784 8830</a> || Office:{" "}
+                <a href="tel:+14167991019">+1 416 799 1019</a>
               </p>
             </div>
             <div className="contact-item">
@@ -80,8 +81,8 @@ const Contact = () => {
             <div className="contact-item">
               <span className="icon">📍</span>
               <p>
-                Services are available at Missisuaga, Toronto, Markham,
-                Scarborough, Pickering{" "}
+                Services are available at Mississauga, Toronto, Markham,
+                Scarborough, Pickering
               </p>
             </div>
           </div>
@@ -100,6 +101,7 @@ const Contact = () => {
                   onChange={handleChange}
                   placeholder="Enter your name"
                   required
+                  aria-required="true"
                 />
               </div>
 
@@ -113,6 +115,7 @@ const Contact = () => {
                   onChange={handleChange}
                   placeholder="Enter your email"
                   required
+                  aria-required="true"
                 />
               </div>
 
@@ -125,6 +128,7 @@ const Contact = () => {
                   onChange={handleChange}
                   placeholder="Type your message here"
                   required
+                  aria-required="true"
                 ></textarea>
               </div>
 
@@ -133,7 +137,11 @@ const Contact = () => {
               </button>
 
               {feedback && (
-                <div className={`form-feedback ${feedback.type}`}>
+                <div
+                  className={`form-feedback ${feedback.type}`}
+                  role="alert"
+                  aria-live="polite"
+                >
                   {feedback.message}
                 </div>
               )}
