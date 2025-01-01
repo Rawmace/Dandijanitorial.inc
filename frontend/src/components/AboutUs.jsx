@@ -22,9 +22,7 @@ const AboutUs = () => {
               communication with our clients and aim to exceed expectations with
               every service.
             </p>
-            <div className="about-image">
-              <img src={about} alt="Our team working" />
-            </div>
+
             <h3 className="mission-title">Our Mission</h3>
             <p>
               Our mission is simple – to provide top-notch cleaning services
@@ -42,7 +40,9 @@ const AboutUs = () => {
               expectations.
             </p>
           </div>
-
+          <div className="about-image">
+            <img src={about} alt="Our team working" />
+          </div>
           <div className="about-image">
             <img src={aboutImage} alt="Our team working" />
           </div>

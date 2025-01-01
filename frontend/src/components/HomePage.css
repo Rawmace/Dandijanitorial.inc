@@ -208,11 +208,12 @@
   }
 
   .main-heading {
-    font-size: 25px;
+    font-size: 20px;
   }
 
   .subtext {
-    font-size: 18px;
+    max-width: fit-content;
+    font-size: 14px;
   }
 }
 
