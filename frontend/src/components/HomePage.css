@@ -10,8 +10,9 @@
 
 /* Home container with background image */
 .home-container {
-  background-image: url("../assets/background1.jpg"); /* Replace with your background image */
+  background-image: url("../assets/logo.jpg"); /* Replace with your background image */
   background-size: cover;
+
   background-position: center;
   height: 100vh;
   position: relative;
@@ -39,13 +40,14 @@
 }
 
 .logo {
-  height: 50px;
+  height: 60px;
+  width: 50px;
   margin-right: 10px;
-  border-radius: 50%;
+  border-radius: 60%;
 }
 
 .company-title {
-  color: white;
+  color: aqua;
   font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
@@ -123,6 +125,7 @@
 }
 
 .main-heading {
+  /* color: rgb(0, 219, 172); */
   color: rgb(255, 255, 255);
   -webkit-text-stroke: 1px rgb(255, 255, 255);
   font-size: 48px;
@@ -133,9 +136,16 @@
 }
 
 .subtext {
+  border: solid #004d40;
+  border-radius: 10%;
   color: rgb(255, 255, 255);
+  background-color: #004d40;
+  /* max-width: fit-content;
+  max-height: fit-content; */
+  padding: 2px;
   font-size: 22px;
   font-weight: 400;
+
   margin-bottom: 30px;
   letter-spacing: 1.5px;
 }

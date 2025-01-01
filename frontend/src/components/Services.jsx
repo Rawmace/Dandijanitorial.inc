@@ -6,7 +6,11 @@ import {
   FaDoorOpen,
   FaPhoneAlt,
   FaShower,
-} from "react-icons/fa"; // Import some example icons
+  FaBuilding, // New icon for general construction clean-up
+  FaSprayCan,
+} from "react-icons/fa"; // Importing more icons
+import { GiWindow } from "react-icons/gi";
+
 import "./Services.css"; // Ensure you link the upgraded CSS file
 
 const Services = () => {
@@ -16,17 +20,7 @@ const Services = () => {
         <h2 className="services-heading">Our Premium Services</h2>
 
         <div className="services-list">
-          <div className="service-item">
-            <div className="service-icon">
-              <FaBroom />
-            </div>
-            <h3>Janitorial Services & Housekeeping</h3>
-            <p>
-              Complete janitorial and housekeeping services for a spotless
-              space.
-            </p>
-          </div>
-
+          {/* Keeping the original services */}
           <div className="service-item">
             <div className="service-icon">
               <FaShower />
@@ -68,6 +62,50 @@ const Services = () => {
             <p>
               Quick and effective response for flood and water damage to prevent
               further harm.
+            </p>
+          </div>
+
+          <div className="service-item">
+            <div className="service-icon">
+              <FaBuilding />
+            </div>
+            <h3>General Construction Clean-up</h3>
+            <p>
+              Comprehensive clean-up services for construction sites, removing
+              debris and ensuring a spotless environment.
+            </p>
+          </div>
+
+          <div className="service-item">
+            <div className="service-icon">
+              <GiWindow />
+            </div>
+            <h3>Interior Glass Cleaning</h3>
+            <p>
+              Crystal-clear interior glass cleaning, ensuring streak-free and
+              spotless results for windows and glass surfaces.
+            </p>
+          </div>
+
+          <div className="service-item">
+            <div className="service-icon">
+              <FaSprayCan />
+            </div>
+            <h3>Sanitization and Disinfecting</h3>
+            <p>
+              Professional sanitization and disinfecting services with the use
+              of an electrostatic sprayer for thorough coverage and safety.
+            </p>
+          </div>
+
+          <div className="service-item">
+            <div className="service-icon">
+              <FaBroom />
+            </div>
+            <h3>Post Construction Clean-up</h3>
+            <p>
+              Specialized post-construction cleaning to remove dust, debris, and
+              ensure the space is move-in ready.
             </p>
           </div>
 

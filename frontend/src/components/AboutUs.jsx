@@ -2,6 +2,7 @@ import React from "react";
 import { FaLeaf, FaCertificate, FaHandshake } from "react-icons/fa"; // Add icons
 import "./AboutUs.css"; // Import the CSS file for styling
 import aboutImage from "../assets/about.jpg"; // Import the image
+import about from "../assets/background1.jpg"; // Import the image
 
 const AboutUs = () => {
   return (
@@ -21,6 +22,9 @@ const AboutUs = () => {
               communication with our clients and aim to exceed expectations with
               every service.
             </p>
+            <div className="about-image">
+              <img src={about} alt="Our team working" />
+            </div>
             <h3 className="mission-title">Our Mission</h3>
             <p>
               Our mission is simple – to provide top-notch cleaning services
@@ -30,6 +34,7 @@ const AboutUs = () => {
               certified by the IICRC, the largest and most respected cleaning
               certification organization in the world.
             </p>
+
             <p>
               We also emphasize eco-friendly cleaning practices, ensuring that
               our methods and products are safe for both your workplace and the
