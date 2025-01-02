@@ -29,9 +29,9 @@ body {
 }
 
 .contact-heading {
-  font-size: 36px;
+  font-size: 2em;
   font-weight: 700;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   text-transform: uppercase;
   letter-spacing: 2px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
@@ -97,7 +97,7 @@ body {
 }
 
 .contact-form h3 {
-  font-size: 28px;
+  font-size: 25px;
   font-weight: 600;
   margin-bottom: 20px;
   color: #333;

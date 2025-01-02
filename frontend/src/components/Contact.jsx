@@ -79,10 +79,7 @@ const Contact = () => {
             </div>
             <div className="contact-item">
               <span className="icon">📍</span>
-              <p>
-                Services are available at Mississauga, Toronto, Markham,
-                Scarborough, Pickering
-              </p>
+              <p>Services available: Toronto and across the GTA.</p>
             </div>
           </div>
 
