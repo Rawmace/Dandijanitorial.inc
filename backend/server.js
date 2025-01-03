@@ -17,14 +17,12 @@ app.use(
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Setup email transport for Yahoo Mail
+// Setup email transport for Gmail
 const transporter = nodemailer.createTransport({
-  host: "smtp.mail.yahoo.com",
-  port: 465,
-  secure: true,
+  service: "gmail", // Gmail service
   auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
+    user: process.env.EMAIL_USER, // Your Gmail address
+    pass: process.env.EMAIL_PASS, // Your Gmail app-specific password
   },
 });
 
