@@ -9,9 +9,9 @@ const app = express();
 const port = process.env.PORT || 5000;
 app.use(
   cors({
-    origin: "https://dandijanitorial.com",
+    origin: "https://dandijanitorial.com", // Change this if needed
   })
-); // Allow requests from different origins
+);
 
 // Middleware to parse incoming request bodies
 app.use(bodyParser.json());
@@ -41,7 +41,9 @@ transporter.verify((error, success) => {
 function validateEmailForm(req, res, next) {
   const { name, email, message } = req.body;
 
+  // Validate input fields
   if (!name || !email || !message) {
+    console.log("Validation failed: Missing fields.");
     return res.status(400).json({
       status: "error",
       message: "All fields (name, email, message) are required.",
@@ -50,17 +52,21 @@ function validateEmailForm(req, res, next) {
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
+    console.log("Validation failed: Invalid email format.");
     return res.status(400).json({
       status: "error",
       message: "Invalid email format.",
     });
   }
 
+  console.log("Validation successful.");
   next();
 }
 
 // Endpoint to handle the form submission
 app.post("/send-email", validateEmailForm, (req, res) => {
+  console.log("Received request body:", req.body); // Log incoming request body
+
   const { name, email, message } = req.body;
 
   const mailOptions = {
@@ -69,6 +75,9 @@ app.post("/send-email", validateEmailForm, (req, res) => {
     subject: `Message from ${name}`,
     text: `You have received a new message from ${name} (${email}):\n\n${message}`,
   };
+
+  // Log mailOptions for debugging
+  console.log("Mail options:", mailOptions);
 
   // Send the email
   transporter.sendMail(mailOptions, (error, info) => {
