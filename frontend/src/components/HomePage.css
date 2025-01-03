@@ -206,16 +206,16 @@
   }
 
   .company-title {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .main-heading {
-    font-size: 20px;
+    font-size: 15px;
   }
 
   .subtext {
     max-width: fit-content;
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 

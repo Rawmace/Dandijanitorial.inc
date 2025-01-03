@@ -13,23 +13,47 @@ app.use(cors()); // Allow requests from different origins
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Setup email transport (Gmail as example)
+// Setup email transport for Yahoo Mail
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtp.mail.yahoo.com", // Yahoo SMTP server
+  port: 465, // Secure port for Yahoo
+  secure: true, // Use SSL
   auth: {
-    user: process.env.EMAIL_USER, // Use environment variable
-    pass: process.env.EMAIL_PASS, // Use environment variable
+    user: process.env.EMAIL_USER, // Your Yahoo email
+    pass: process.env.EMAIL_PASS, // Your Yahoo password
   },
 });
 
+// Validation Middleware
+function validateEmailForm(req, res, next) {
+  const { name, email, message } = req.body;
+
+  if (!name || !email || !message) {
+    return res.status(400).json({
+      status: "error",
+      message: "All fields (name, email, message) are required.",
+    });
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return res.status(400).json({
+      status: "error",
+      message: "Invalid email format.",
+    });
+  }
+
+  next();
+}
+
 // Endpoint to handle the form submission
-app.post("/send-email", (req, res) => {
+app.post("/send-email", validateEmailForm, (req, res) => {
   const { name, email, message } = req.body;
 
   // Define email options
   const mailOptions = {
     from: `${name} <${email}>`, // Sender's email with name
-    to: process.env.EMAIL_USER, // Send to your own email address
+    to: process.env.EMAIL_USER, // Send to your own Yahoo email address
     subject: `Message from ${name}`,
     text: `You have received a new message from ${name} (${email}):\n\n${message}`,
   };

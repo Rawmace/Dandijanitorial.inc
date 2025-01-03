@@ -6,12 +6,12 @@ import {
   FaDoorOpen,
   FaPhoneAlt,
   FaShower,
-  FaBuilding, // New icon for general construction clean-up
+  FaBuilding,
   FaSprayCan,
-} from "react-icons/fa"; // Importing more icons
+} from "react-icons/fa";
 import { GiWindow } from "react-icons/gi";
 
-import "./Services.css"; // Ensure you link the upgraded CSS file
+import "./Services.css";
 
 const Services = () => {
   return (
@@ -20,9 +20,24 @@ const Services = () => {
         <h2 className="services-heading">Our Premium Services</h2>
 
         <div className="services-list">
-          {/* Keeping the original services */}
           <div className="service-item">
-            <div className="service-icon">
+            <div className="service-icon" aria-label="Janitorial Services Icon">
+              <FaBroom />
+            </div>
+            <h3>Complete Janitorial Services</h3>
+            <p>
+              Our janitorial services cover all aspects of cleaning and
+              maintenance for your workspace, facility, or home, including
+              routine cleaning, window washing, trash removal, and disinfecting
+              high-touch surfaces.
+            </p>
+          </div>
+
+          <div className="service-item">
+            <div
+              className="service-icon"
+              aria-label="Shower/Carpet Cleaning Icon"
+            >
               <FaShower />
             </div>
             <h3>Carpet Cleaning</h3>
@@ -33,7 +48,7 @@ const Services = () => {
           </div>
 
           <div className="service-item">
-            <div className="service-icon">
+            <div className="service-icon" aria-label="Floor Maintenance Icon">
               <FaDoorOpen />
             </div>
             <h3>Strip, Seal & Wax</h3>
@@ -44,7 +59,7 @@ const Services = () => {
           </div>
 
           <div className="service-item">
-            <div className="service-icon">
+            <div className="service-icon" aria-label="Upholstery Cleaning Icon">
               <FaCouch />
             </div>
             <h3>Upholstery Cleaning</h3>
@@ -55,7 +70,7 @@ const Services = () => {
           </div>
 
           <div className="service-item">
-            <div className="service-icon">
+            <div className="service-icon" aria-label="Water Damage Icon">
               <FaWater />
             </div>
             <h3>Flood & Water Damage Emergencies</h3>
@@ -66,10 +81,13 @@ const Services = () => {
           </div>
 
           <div className="service-item">
-            <div className="service-icon">
+            <div
+              className="service-icon"
+              aria-label="Construction Clean-up Icon"
+            >
               <FaBuilding />
             </div>
-            <h3>General Construction Clean-up</h3>
+            <h3>General/Post Construction Clean-up</h3>
             <p>
               Comprehensive clean-up services for construction sites, removing
               debris and ensuring a spotless environment.
@@ -77,7 +95,7 @@ const Services = () => {
           </div>
 
           <div className="service-item">
-            <div className="service-icon">
+            <div className="service-icon" aria-label="Glass Cleaning Icon">
               <GiWindow />
             </div>
             <h3>Interior Glass Cleaning</h3>
@@ -88,7 +106,7 @@ const Services = () => {
           </div>
 
           <div className="service-item">
-            <div className="service-icon">
+            <div className="service-icon" aria-label="Disinfecting Icon">
               <FaSprayCan />
             </div>
             <h3>Sanitization and Disinfecting</h3>
@@ -99,18 +117,7 @@ const Services = () => {
           </div>
 
           <div className="service-item">
-            <div className="service-icon">
-              <FaBroom />
-            </div>
-            <h3>Post Construction Clean-up</h3>
-            <p>
-              Specialized post-construction cleaning to remove dust, debris, and
-              ensure the space is move-in ready.
-            </p>
-          </div>
-
-          <div className="service-item">
-            <div className="service-icon">
+            <div className="service-icon" aria-label="Emergency Response Icon">
               <FaPhoneAlt />
             </div>
             <h3>24/7 Emergency Response</h3>
