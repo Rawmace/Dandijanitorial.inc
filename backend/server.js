@@ -7,7 +7,11 @@ require("dotenv").config();
 // Initialize the app
 const app = express();
 const port = process.env.PORT || 5000;
-app.use(cors({ origin: "*" })); // Allow requests from different origins
+app.use(
+  cors({
+    origin: "https://dandijanitorial.com",
+  })
+); // Allow requests from different origins
 
 // Middleware to parse incoming request bodies
 app.use(bodyParser.json());
@@ -70,12 +74,10 @@ app.post("/send-email", validateEmailForm, (req, res) => {
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.error("Error while sending email:", error);
-      return res
-        .status(500)
-        .json({
-          status: "error",
-          message: "Failed to send email. " + error.message,
-        });
+      return res.status(500).json({
+        status: "error",
+        message: "Failed to send email. " + error.message,
+      });
     }
     console.log("Email sent: " + info.response);
     return res
